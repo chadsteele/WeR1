@@ -1,6 +1,6 @@
 export default [
 	{
-		id: 1,
+		id: "1",
 		name: "Shape of You",
 		artistName: "Ed Sheeran",
 		duration: 263,
@@ -10,7 +10,7 @@ export default [
 		updatedAt: new Date("2023-01-01T00:00:00Z"),
 	},
 	{
-		id: 2,
+		id: "2",
 		name: "Blinding Lights",
 		artistName: "The Weeknd",
 		duration: 200,
@@ -20,7 +20,7 @@ export default [
 		updatedAt: new Date("2023-01-02T00:00:00Z"),
 	},
 	{
-		id: 3,
+		id: "3",
 		name: "Levitating",
 		artistName: "Dua Lipa",
 		duration: 203,
@@ -30,7 +30,7 @@ export default [
 		updatedAt: new Date("2023-01-03T00:00:00Z"),
 	},
 	{
-		id: 4,
+		id: "4",
 		name: "Bad Guy",
 		artistName: "Billie Eilish",
 		duration: 194,
@@ -40,7 +40,7 @@ export default [
 		updatedAt: new Date("2023-01-04T00:00:00Z"),
 	},
 	{
-		id: 5,
+		id: "5",
 		name: "Sunflower",
 		artistName: "Post Malone",
 		duration: 158,
