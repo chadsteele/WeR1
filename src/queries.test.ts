@@ -1,8 +1,7 @@
 import defaultTracks from "./defaultTracks"
-import { beforeAll, expect, jest, test, describe } from "@jest/globals"
+import { expect, test, describe } from "@jest/globals"
 import db from "./db"
 import { ApolloServer } from "@apollo/server"
-import tracks from "./defaultTracks"
 import typeDefs from "./typeDefs"
 import resolvers from "./resolvers"
 

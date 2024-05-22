@@ -2,15 +2,34 @@
 
 by Chad Steele
 
-## Init
-
 The [Original Requirements](#original-requirements) are at the end of this document
 
-Clone and initialize the repository in your environment
+## Introduction
+
+This was a "fun" exercise. I learned a lot about the graphql and apollo studio. I have zero professional experience with both, so I'm not seasoned, but hopefully I have demonstrated a capacity to learn. :)
+
+-   I used defaultTracks.ts as dummy data to test with via jest
+-   I created db.ts as a very dumb abstraction to an external db system to be used in another space and time.
+-   I wrote fetchACR.ts to be a very specific way to interface with ACR Cloud and uses axios per the example that ACR provides. It is not a general purpose fetch. YAGNI principle
+
+#### Evaluation Criteria:
+
+-   Correct implementation of the GraphQL schema and resolvers. - hope so, still learning
+-   Proper error handling and response status codes. - yes? e.g. throw new GraphQLError("Invalid credentials")
+-   Use of TypeScript for type safety and clear type definitions. - check!
+-   Overall code organization, readability, and best practices. - so many styles, mine is KISS and so, I tried to write as little as possible
+-   Tests properly written. - arrange. act. assert. Also, when possible, I tried to write my tests to be "shape agnostic" and so, they're thorough, but somewhat loosely coupled. And finally, I did not mock the ACR server and so, a couple of the tests are technically "integration tests" and not pure "unit tests".
+
+# Let's get started
+
+Clone and initialize and test the repository in your environment
+see https://github.com/chadsteele/WeR1
 
 ```bash
-
-
+$ git clone git@github.com:chadsteele/WeR1.git
+$ cd WeR1
+$ npm i
+$ npm test
 ```
 
 If you don't already have ACR Cloud creds, get them...
@@ -33,6 +52,21 @@ Note: TEST_TOKEN is optional, but if you use it. You can put it in your headers 
 ```bash
 Authorization:testing
 ```
+
+Obviously a production .env whould not have TEST_TOKEN defined!
+
+## Apollo Studio
+
+The easiest way to check the code is using Jest and the [Integration and Unit Tests](#integration-tests) below.
+
+But if you like tinkering, first ensure the server is running
+
+```bash
+$ npm start
+```
+
+and then you can play with the Api in ApolloStudio
+https://studio.apollographql.com/sandbox/explorer
 
 ## Integration Tests
 
@@ -112,20 +146,19 @@ Requirements:
     schema that has internal id, created at & updated at fields that will be extended to the
     following schema:
 
-         Track:
+Track:
 
-             - name
-             - artist_name
-             - duration
-             - ISRC
-             - release_date
+-   name
+-   artist_name
+-   duration
+-   ISRC
+-   release_date
 
 2.  Implement the necessary resolvers to handle the following operations:
 
-        -   Get a Track by its name and artist name & create a new entity to the database
-            when not present in the system (should fetch data from the external API).
-        -   Get all tracks in the database.
-        -   Get/Update/Delete a specific Track by internal ID.
+-   Get a Track by its name and artist name & create a new entity to the database when not present in the system (should fetch data from the external API).
+-   Get all tracks in the database.
+-   Get/Update/Delete a specific Track by internal ID.
 
 3.  Implement token authentication for the GraphQL endpoint.
 4.  Include proper error handling and response status codes for GraphQL endpoints.
@@ -140,15 +173,15 @@ Requirements:
 
 System logic implementation:
 
-    -   When there is a search for a Track and there is no entry in the database, fetch it from
-        the external API and create a new entry to the database.
+-   When there is a search for a Track and there is no entry in the database, fetch it from
+    the external API and create a new entry to the database.
 
 Evaluation Criteria:
 
-        -   Correct implementation of the GraphQL schema and resolvers.
-        -   Proper error handling and response status codes.
-        -   Use of TypeScript for type safety and clear type definitions.
-        -   Overall code organization, readability, and best practices.
-        -   Tests properly written.
+-   Correct implementation of the GraphQL schema and resolvers.
+-   Proper error handling and response status codes.
+-   Use of TypeScript for type safety and clear type definitions.
+-   Overall code organization, readability, and best practices.
+-   Tests properly written.
 
 **Please write a few sentences on how the evaluation criteria was met.**

@@ -1,11 +1,8 @@
 import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
-import tracks from "./defaultTracks"
 import typeDefs from "./typeDefs"
 import resolvers from "./resolvers"
 import jwt from "jsonwebtoken"
-import { applyMiddleware } from "graphql-middleware"
-import { makeExecutableSchema } from "graphql-tools"
 
 const server = new ApolloServer({
 	typeDefs,

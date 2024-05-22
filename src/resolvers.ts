@@ -2,7 +2,7 @@
 import db from "./db"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
-import fetch from "./fetch"
+import fetch from "./fetchACR"
 import { GraphQLError } from "graphql"
 
 export default {
