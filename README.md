@@ -26,10 +26,10 @@ Clone and initialize and test the repository in your environment
 see https://github.com/chadsteele/WeR1
 
 ```bash
-$ git clone git@github.com:chadsteele/WeR1.git
-$ cd WeR1
-$ npm i
-$ npm test
+git clone git@github.com:chadsteele/WeR1.git
+cd WeR1
+npm i
+touch .env
 ```
 
 If you don't already have ACR Cloud creds, get them...
@@ -62,7 +62,7 @@ The easiest way to check the code is using Jest and the [Integration and Unit Te
 But if you like tinkering, first ensure the server is running
 
 ```bash
-$ npm start
+npm start
 ```
 
 and then you can play with the Api in ApolloStudio
@@ -74,7 +74,7 @@ The best way to exercise the code is via the unit/integration tests. You should 
 The assignment asked for 2 tests. I did 18, to ensure it's working as expected. There are likely 18 more, at least, to test for all the ways a user could fail and/or hack the api. My goal was to satisfy the homework, not be bulletproof.
 
 ```bash
-$ npm test
+npm test
 
 > wer1@1.0.0 test
 > jest --verbose
